@@ -1,0 +1,431 @@
+/* ---------- General Layout ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: #548aff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+#search-bar {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 180px;
+}
+
+#auth-btn {
+  background: white;
+  color: #548aff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#auth-btn:hover {
+  background-color: #4176d4;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Step Sections ---------- */
+.step {
+  display: none;
+  padding: 60px 20px;
+}
+
+.step.active {
+  display: block;
+}
+
+/* ---------- Choice Buttons (Home Screen) ---------- */
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.big-btn {
+  flex: 1 1 160px;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.big-btn img {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.big-btn span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.big-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #a8d0ff, #d0e6ff);
+  border-color: #66a6ff;
+}
+
+@media (max-width: 600px) {
+  .big-btn {
+    flex: 1 1 140px;
+  }
+  .big-btn img {
+    width: 60%;
+  }
+  .big-btn span {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #548aff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Grid: Classes & Subjects ---------- */
+#classes-grid,
+#subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.subject-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 180px;
+}
+
+.subject-card:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #a8d0ff, #d0e6ff);
+  color: #000;
+}
+
+/* ---------- Back Button ---------- */
+.back-btn {
+  background-color: #82cfff;
+  color: #333;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #66a6ff;
+  color: white;
+}
+
+/* ---------- Quiz Section ---------- */
+.question-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.question-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4176d4;
+  margin-bottom: 30px;
+}
+
+/* Options */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.option-btn {
+  background-color: #f9f9f9;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover / before selection blink */
+.option-btn:hover {
+  background-color: #d0e6ff; /* light blue */
+  border-color: #66a6ff;
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(102, 166, 255, 0.4);
+  animation: blink 0.5s alternate infinite;
+}
+
+/* Blink keyframes */
+@keyframes blink {
+  from { box-shadow: 0 6px 15px rgba(102, 166, 255, 0.4); }
+  to { box-shadow: 0 10px 20px rgba(102, 166, 255, 0.7); }
+}
+
+/* Selected correct answer → green */
+.option-btn.correct {
+  background-color: #4caf50;  /* green */
+  color: #fff;
+  border-color: #2e7d32;
+  animation: none;  /* stop blinking */
+}
+
+/* Selected incorrect answer → red */
+.option-btn.incorrect {
+  background-color: #f44336;  /* red */
+  color: #fff;
+  border-color: #d32f2f;
+  animation: none;  /* stop blinking */
+}
+
+/* Disabled buttons after selection */
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+  transform: none;
+}
+
+/* ---------- Quiz Navigation Buttons ---------- */
+.quiz-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.next-btn,
+.skip-btn,
+.finish-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+.next-btn {
+  background: #66a6ff;
+}
+
+.next-btn:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.skip-btn {
+  background: #548aff;
+}
+
+.finish-btn {
+  background: #ffc107;
+  color: #333;
+}
+
+/* ---------- Result Box ---------- */
+.result-box {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 700px;
+  margin: 80px auto;
+}
+
+.result-box h2 {
+  color: #548aff;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.result-box p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* ---------- Toast Notifications ---------- */
+#toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #66a6ff;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  font-weight: 500;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Quiz Settings Inputs ---------- */
+.quiz-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.quiz-settings label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.quiz-settings input,
+.quiz-settings select {
+  margin-top: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.quiz-settings input:focus,
+.quiz-settings select:focus {
+  border-color: #66a6ff;
+  box-shadow: 0 0 8px rgba(102,166,255,0.3);
+}
+
+/* Start Quiz Button */
+#start-quiz-btn {
+  margin-top: 10px;
+  background: #66a6ff;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#start-quiz-btn:hover {
+  background: #548aff;
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .quiz-settings {
+    gap: 15px;
+  }
+  .quiz-settings input,
+  .quiz-settings select {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  #start-quiz-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
