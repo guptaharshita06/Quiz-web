@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="./style/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="unnamed.png" alt="Quiz Logo" class="logo">
+    </div>
+    <div class="header-center">
+      <h1>Student Dashboard</h1>
+    </div>
+    <div class="header-right">
+      <button id="logout-btn" class="login-btn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Student Info -->
+    <section class="user-info">
+      <h2 id="student-name">Hello, Student!</h2>
+      <p id="student-class">Quiz Performance Summary</p>
+    </section>
+
+    <!-- Subject Performance -->
+    <section class="subject-progress-section">
+      <h3>Subject Performance</h3>
+      <div id="subject-progress" class="progress-container"></div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="chart-section">
+      <canvas id="performance-chart"></canvas>
+    </section>
+
+    <!-- Last 5 Results -->
+    <section class="recent-results-section">
+      <h3>Last 5 Results</h3>
+      <div id="results-cards" class="results-cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Quiz Website. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">About</a> |
+      <a href="#">Contact</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>
