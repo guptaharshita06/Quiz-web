@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Quiz</title>
+  <link rel="stylesheet" href="./style/index.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <img src="unnamed.png" class="logo" alt="Quiz Logo" />
+      <h1 id="welcome-text" class="typewriter">Quiz Master</h1>
+    </div>
+    <div class="header-right">
+      <button id="auth-btn">Login / Signup</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Step 1: Level -->
+    <section id="step-1" class="step active">
+      <h2 class="step-title">Choose Your Level</h2>
+      <div class="level-buttons">
+        <button class="choice-btn big-btn" data-type="school">
+          <img src="https://cdn-icons-png.flaticon.com/512/2857/2857384.png" alt="School" />
+          <span>School</span>
+        </button>
+        <button class="choice-btn big-btn" data-type="college">
+          <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" alt="College" />
+          <span>College</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 2: Class/Branch -->
+    <section id="step-2" class="step">
+      <h2 id="step2-title"></h2>
+      <div id="classes-grid"></div>
+      <button id="back-step2" class="back-btn">⬅ Back</button>
+    </section>
+
+    <!-- Step 3: Subject -->
+    <section id="step-3" class="step">
+      <h2>Select Subject</h2>
+      <div id="subjects-grid"></div>
+      <button id="back-step3" class="back-btn">⬅ Back</button>
+    </section>
+
+    <!-- Step 4: Quiz Settings -->
+    <section id="step-4" class="step">
+      <h2 id="quiz-title">Select Quiz Settings</h2>
+      <div class="quiz-settings">
+        <label>
+          Number of Questions:
+          <input type="number" id="num-questions" min="1" max="50" value="5">
+        </label>
+
+        <label>
+          Question Type:
+          <select id="question-type">
+            <option value="multiple">Multiple Choice</option>
+            <option value="boolean">True / False</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty:
+          <select id="question-difficulty">
+            <option value="">Any</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <button id="start-quiz-btn">Start Quiz</button>
+      </div>
+      <button class="back-btn" id="back-step4">⬅ Back</button>
+    </section>
+
+    <!-- Step 5: Quiz Questions -->
+   <section id="step-5" class="step">
+  <!-- Timer Wrapper -->
+  <div id="timer-wrapper">
+    <svg id="timer-circle" width="60" height="60">
+      <circle class="progress-bg" r="28" cx="30" cy="30" stroke="#eee" stroke-width="4" fill="none"/>
+      <circle class="progress" r="28" cx="30" cy="30" stroke="#66a6ff" stroke-width="4" fill="none"/>
+    </svg>
+    <span id="timer">30</span>
+  </div>
+
+  <h2 id="quiz-title"></h2>
+  <div id="questions-container"></div>
+  <button id="back-step5" class="back-btn">⬅ Back</button>
+</section>
+
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Quiz Master | Designed with ❤️ by Jitendra</p>
+  </footer>
+
+  <script src="./quiz.js"></script>
+</body>
+</html>
